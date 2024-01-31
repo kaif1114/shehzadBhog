@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro">
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Shehzad Bhog</title>
+</head>
+<body>
+    <div class="title-container" >
+        <span class="title shehzad">Shehzad</span>
+        <span class="title second-text"> Bhog</span>
+    </div>
+    
+    <div class="main-container">
+        <div class="phrase-container">
+            <h3>
+                <span class="phrase p1">Generate your </span>
+                <span class="phrase p2">Bhog</span>
+                <p class="phrase p3">By Typing A Word Related To It</p>
+            </h3>
+            
+        </div>
+        <div class="form-container">
+            <form action="/submit" method="POST" >
+                <input type="text" name="value" id="input" placeholder="Enter a word" required >
+                <button for="value" type="submit" class="btn">Generate</button>
+            </form>
+        </div>
+        <% if(locals.bhogg){  %>
+        <div class="bhog-container">
+            <h5 class="bhog"> <%= bhogg %></h5>
+        </div>
+        <% }%>
+    </div>
+
+    <script>
+        const text = document.querySelector(".second-text");
+        const textLoad = () => {
+            setTimeout(() => {
+                text.textContent = "Bhog";
+            }, 0);
+            setTimeout(() => {
+                text.textContent = "Kamedi";
+            }, 2000);
+            
+        }
+        textLoad();
+        setInterval(textLoad, 4000);
+    </script>    
+</body>
+</html>
